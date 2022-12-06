@@ -1,8 +1,9 @@
-# GUI app code from https://github.com/patrickloeber/python-fun/blob/master/chatbot-gui/app.py
+# Code for GUI modified from from https://github.com/patrickloeber/python-fun/blob/master/chatbot-gui/app.py
 
 from tkinter import *
 #from chat import get_response, bot_name
 from nltk_utils import clean_input
+from response import chat_response
 
 bot_name = "Bot"
 
@@ -77,7 +78,7 @@ class ChatApplication:
         self.text_widget.configure(state=DISABLED)
         
         #msg2 = f"{bot_name}: {get_response(msg)}\n\n"
-        msg2 = f"{bot_name}: {clean_input(msg)}\n\n"
+        msg2 = f"{bot_name}: {chat_response(msg)}\n\n"
         self.text_widget.configure(state=NORMAL)
         self.text_widget.insert(END, msg2)
         self.text_widget.configure(state=DISABLED)
